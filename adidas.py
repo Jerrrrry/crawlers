@@ -1,28 +1,26 @@
 # Import libraries
-import requests
-import time
-from bs4 import BeautifulSoup
+
+#!/bin/python
+# -*- coding: utf-8 -*-
+
+from time import sleep
+from random import randint
 from selenium import webdriver
 from pyvirtualdisplay import Display
 
+driver = webdriver.Chrome("/var/chromedriver/chromedriver")
+url = "https://www.adidas.com/us/men-basketball-shoes"
 
-driver = webdriver.Firefox()
-# Set the URL you want to webscrape from
-url="https://www.adidas.com/us/men-basketball-shoes"
-# Connect to the URL
-response = requests.get(url)
+display = Display(visible=0, size=(800, 600))
+display.start()
+driver = webdriver.Chrome("/var/chromedriver/chromedriver")
+sleep(4)
 
-# Parse HTML and save to BeautifulSoup object
-soup = BeautifulSoup(response.text, "html.parser")
+driver.get(url)
+sleep(randint(2,3))
 
-# To download the whole data set, let's do a for loop through all a tags
-i=0
-while i<len(soup.find_all('div','gl-product-card')):
-    print(soup.find_all('div','gl-product-card__name')[i].string)
-    print(soup.find_all('span','gl-price__value')[i].string)
-    i+=1
-
-
+for div in driver.find_elements_by_xpath('//div[@class="gl-product-card__name gl-label gl-label--medium"]//'):
+	print(div)
 
 
 

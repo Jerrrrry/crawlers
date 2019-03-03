@@ -20,11 +20,11 @@ print('initiating chrome driver')
 
 print('start display')
 sleep(4)
-
+driver.implicitly_wait(10)
 driver.get(url)
 
 print('get url')
-sleep(10)
+sleep(2)
 divs=driver.find_elements_by_xpath("//div[@class='gl-product-card__name gl-label gl-label--medium']")
 
 print(len(divs))

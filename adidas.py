@@ -15,8 +15,8 @@ options.add_argument("--headless")
 chromeDriverPath = "/var/chromedriver/chromedriver"
 driver = webdriver.Chrome(chromeDriverPath, chrome_options=options)
 print('initiating chrome driver')
-display = Display(visible=0, size=(800, 600))
-display.start()
+#display = Display(visible=0, size=(800, 600))
+#display.start()
 
 print('start display')
 
@@ -29,7 +29,7 @@ sleep(randint(2,3))
 for div in driver.find_elements_by_xpath('//div[@class="gl-product-card__name gl-label gl-label--medium"]//'):
 	print(div)
 
-display.stop()
+#display.stop()
 driver.quit()
 
 

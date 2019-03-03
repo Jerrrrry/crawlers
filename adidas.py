@@ -28,7 +28,7 @@ sleep(4)
 driver.get(url)
 
 print('get url')
-sleep(randint(2,3))
+sleep(4)
 
 for div in driver.find_elements_by_xpath("//div[@class='gl-price']"):
     print(1)

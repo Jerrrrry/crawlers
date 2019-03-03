@@ -28,8 +28,8 @@ sleep(4)
 driver.get(url)
 sleep(randint(2,3))
 
-for div in driver.find_elements_by_xpath('//div[@class="gl-product-card__name gl-label gl-label--medium"]//'):
-	print(div)
+for div in driver.find_elements_by_xpath('//div[@class="gl-product-card__name gl-label gl-label--medium"]'):
+	print(div.text)
 
 #display.stop()
 driver.quit()

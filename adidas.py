@@ -7,12 +7,9 @@ from time import sleep
 from random import randint
 from selenium import webdriver
 from pyvirtualdisplay import Display
-
 from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome("/var/chromedriver/chromedriver")
 url = "https://www.adidas.com/us/men-basketball-shoes"
-
 opts = Options()
 opts.set_headless()
 driver = webdriver.Chrome(options=opts)

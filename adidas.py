@@ -30,7 +30,7 @@ driver.get(url)
 print('get url')
 sleep(4)
 
-for div in driver.find_elements_by_xpath("//div[@class='gl-price']"):
+for div in driver.find_elements_by_xpath('.//*[@class="gl-price"]'):
     print(1)
 
 display.stop()
@@ -41,3 +41,8 @@ driver.quit()
 
 
 #https://www.adidas.com/us/men-basketball-shoes
+#'.//*[@class="price ng-scope ng-binding"]'
+
+#mine
+
+#"//div[@class='gl-price']"

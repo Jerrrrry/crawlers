@@ -7,12 +7,13 @@ from time import sleep
 from random import randint
 from selenium import webdriver
 from pyvirtualdisplay import Display
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 url = "https://www.adidas.com/us/men-basketball-shoes"
-opts = Options()
-opts.set_headless()
-driver = webdriver.Chrome(options=opts)
+options = ChromeOptions()
+options.add_argument("--headless")
+chromeDriverPath = "/var/chromedriver/chromedriver"
+driver = webdriver.Chrome(chromeDriverPath, chrome_options=options)
 print('initiating chrome driver')
 display = Display(visible=0, size=(800, 600))
 display.start()

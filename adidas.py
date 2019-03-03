@@ -26,9 +26,11 @@ print('start display')
 sleep(4)
 
 driver.get(url)
+
+print('get url')
 sleep(randint(2,3))
 
-for div in driver.find_elements_by_xpath('//div[@class="gl-product-card__name gl-label gl-label--medium"]'):
+for div in driver.find_elements_by_xpath("//div[@class='gl-product-card__name']"):
 	print(1)
 
 #display.stop()

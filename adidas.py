@@ -30,6 +30,8 @@ driver.get(url)
 print('get url')
 sleep(4)
 
+print(driver)
+
 for div in driver.find_elements_by_xpath('.//*[@class="gl-price"]'):
     print(1)
 

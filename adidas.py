@@ -17,8 +17,8 @@ options.add_argument('--disable-dev-shm-usage')
 chromeDriverPath = "/var/chromedriver/chromedriver"
 driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
 print('initiating chrome driver')
-#display = Display(visible=0, size=(800, 600))
-#display.start()
+display = Display(visible=0, size=(800, 600))
+display.start()
 
 print('start display')
 
@@ -33,7 +33,7 @@ sleep(4)
 for div in driver.find_elements_by_xpath("//div[@class='gl-price']"):
     print(1)
 
-#display.stop()
+display.stop()
 driver.quit()
 
 

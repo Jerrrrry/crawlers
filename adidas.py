@@ -19,14 +19,12 @@ driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
 print('initiating chrome driver')
 
 print('start display')
-
-
 sleep(4)
 
 driver.get(url)
 
 print('get url')
-sleep(4)
+sleep(2000)
 divs=driver.find_elements_by_xpath("//div[@class='gl-product-card__name gl-label gl-label--medium']")
 #divs=driver.find_elements_by_class_name("gl-product-card__name")
 for div in divs:

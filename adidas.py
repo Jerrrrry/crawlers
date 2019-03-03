@@ -9,7 +9,7 @@ from selenium import webdriver
 from pyvirtualdisplay import Display
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
-url = "https://www.adidas.com/us/men-basketball-shoes"
+url = "https://www.footlocker.com/release-dates"
 options = ChromeOptions()
 options.add_argument("--headless")
 options.add_argument('--no-sandbox')
@@ -17,8 +17,6 @@ options.add_argument('--disable-dev-shm-usage')
 chromeDriverPath = "/var/chromedriver/chromedriver"
 driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
 print('initiating chrome driver')
-display = Display(visible=0, size=(800, 600))
-display.start()
 
 print('start display')
 
@@ -32,10 +30,8 @@ sleep(4)
 
 print(driver)
 
-for div in driver.find_elements_by_xpath('.//*[@class="gl-price"]'):
+for div in driver.find_elements_by_xpath('.//*[@class="c-release-product-month"]'):
     print(1)
-
-display.stop()
 driver.quit()
 
 

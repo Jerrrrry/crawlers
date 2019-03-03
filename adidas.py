@@ -27,10 +27,8 @@ driver.get(url)
 
 print('get url')
 sleep(4)
-
-print(driver)
-
-for div in driver.find_elements_by_xpath('.//*[@class="c-release-product-month"]'):
+divs=driver.find_elements_by_xpath('.//*[@class="c-release-product-month"]')
+for div in divs:
     print(1)
 driver.quit()
 

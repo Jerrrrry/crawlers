@@ -24,8 +24,10 @@ sleep(4)
 driver.get(url)
 
 print('get url')
-sleep(2000)
+sleep(10)
 divs=driver.find_elements_by_xpath("//div[@class='gl-product-card__name gl-label gl-label--medium']")
+
+print(len(divs))
 #divs=driver.find_elements_by_class_name("gl-product-card__name")
 for div in divs:
     print(1)

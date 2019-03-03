@@ -30,7 +30,7 @@ driver.get(url)
 print('get url')
 sleep(randint(2,3))
 
-for div in driver.find_elements_by_xpath("//div[@class='gl-product-card__name']"):
+for span in driver.find_elements_by_xpath("//span[@class='gl-price__value']"):
 	print(1)
 
 #display.stop()

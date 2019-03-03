@@ -12,6 +12,8 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 url = "https://www.adidas.com/us/men-basketball-shoes"
 options = ChromeOptions()
 options.add_argument("--headless")
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 chromeDriverPath = "/var/chromedriver/chromedriver"
 driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
 print('initiating chrome driver')

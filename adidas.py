@@ -9,7 +9,7 @@ from selenium import webdriver
 from pyvirtualdisplay import Display
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
-url = "https://store.nike.com/us/en_us/pw/mens-basketball-shoes/7puZ8r1Zoi3?ipp=62"
+url = "https://www.adidas.com/us/men-basketball-shoes"
 options = ChromeOptions()
 options.add_argument("--headless")
 options.add_argument('--no-sandbox')
@@ -27,13 +27,14 @@ driver.get(url)
 
 print('get url')
 sleep(4)
-divs=driver.find_elements_by_xpath("//div[@class='grid-item-content']")
+#divs=driver.find_elements_by_xpath("//div[@class='grid-item-content']")
+divs=driver.find_elements_by_class_name("gl-product-card__name gl-label gl-label--medium")
 for div in divs:
     print(1)
 driver.quit()
 
 
-
+#find_elements_by_class_name
 
 
 #https://www.adidas.com/us/men-basketball-shoes

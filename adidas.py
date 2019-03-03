@@ -13,7 +13,7 @@ url = "https://www.adidas.com/us/men-basketball-shoes"
 options = ChromeOptions()
 options.add_argument("--headless")
 chromeDriverPath = "/var/chromedriver/chromedriver"
-driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
 print('initiating chrome driver')
 #display = Display(visible=0, size=(800, 600))
 #display.start()

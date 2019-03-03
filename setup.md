@@ -13,7 +13,7 @@ curl "http://chromedriver.storage.googleapis.com/LATEST_RELEASE"
 
 sudo mkdir /var/chromedriver
 cd /var/chromedriver
-wget "http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip"
+wget "http://chromedriver.storage.googleapis.com/2.46/chromedriver_linux64.zip"
 
 unzip chromedriver_linux64.zip
 

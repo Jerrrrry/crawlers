@@ -28,7 +28,7 @@ driver.get(url)
 print('get url')
 sleep(4)
 #divs=driver.find_elements_by_xpath("//div[@class='grid-item-content']")
-divs=driver.find_elements_by_class_name("gl-product-card__name")
+divs=driver.find_elements_by_class_name("div","gl-product-card__name")
 for div in divs:
     print(1)
 driver.quit()

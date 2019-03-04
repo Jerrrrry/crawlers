@@ -9,6 +9,10 @@ from selenium import webdriver
 from pyvirtualdisplay import Display
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
+from selenium.webdriver.support.ui import WebDriverWait
+
+from selenium.webdriver.support import expected_conditions as EC
+
 url = "https://www.finishline.com/new-markdowns?icid=LP_sale_newmarkdowns_TXT#/store/sale/men/shoes/_/N-1naclf7Z1hmpde0Z1nc1fo0Zbalms8?mnid=sale_men"
 options = ChromeOptions()
 options.add_argument("--headless")
@@ -20,18 +24,22 @@ print('initiating chrome driver')
 
 print('start display')
 sleep(4)
-driver.implicitly_wait(10)
+
 driver.get(url)
 
-print('get url')
-sleep(2)
-divs=driver.find_elements_by_xpath("//h2[@class='product-name']")
+try:
+    element=WebDriverWait(driver,10)
+finally:
+    divs=driver.find_elements_by_xpath("//h2[@class='product-name']")
+    print(len(divs))
+    #divs=driver.find_elements_by_class_name("gl-product-card__name")
+    for div in divs:
+        print(1)
+    driver.quit()
 
-print(len(divs))
-#divs=driver.find_elements_by_class_name("gl-product-card__name")
-for div in divs:
-    print(1)
-driver.quit()
+print('get url')
+
+
 
 
 #elements = driver.find_elements_by_class_name("mn-person-card__person-btn-ext.button-secondary-medium")

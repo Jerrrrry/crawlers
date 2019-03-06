@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-url="https://www.adidas.com/us/men-basketball-shoes"
+url="https://la.eater.com/archives"
 options = ChromeOptions()
 options.add_argument("--headless")
 options.add_argument('--no-sandbox')
@@ -28,9 +28,9 @@ sleep(4)
 driver.get(url)
 
 try:
-    element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@data-auto-id='plp-header-bar-products-count']")))
+    element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//h1[@class='p-page-title']")))
 finally:
-    divs=driver.find_elements_by_xpath("//h2[@class='product-name']")
+    divs=driver.find_elements_by_xpath("//a[@data-analytics-link='article']")
     print(len(divs))
     #divs=driver.find_elements_by_class_name("gl-product-card__name")
     for div in divs:

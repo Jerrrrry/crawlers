@@ -34,7 +34,7 @@ finally:
     print(len(divs))
     #divs=driver.find_elements_by_class_name("gl-product-card__name")
     for div in divs:
-        print(1)
+        print(div.text)
     driver.quit()
 
 print('get url')

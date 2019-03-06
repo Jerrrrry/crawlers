@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.support import expected_conditions as EC
 
-url = "https://www.finishline.com/new-markdowns?icid=LP_sale_newmarkdowns_TXT#/store/sale/men/shoes/_/N-1naclf7Z1hmpde0Z1nc1fo0Zbalms8?mnid=sale_men"
+url="https://www.adidas.com/us/men-basketball-shoes"
 options = ChromeOptions()
 options.add_argument("--headless")
 options.add_argument('--no-sandbox')
@@ -28,7 +28,7 @@ sleep(4)
 driver.get(url)
 
 try:
-    element=WebDriverWait(driver,10)
+    element=WebDriverWait(driver,10).until(EC.presence_of_element_loaded((By.CLASS,'count___11uU6 h5')))
 finally:
     divs=driver.find_elements_by_xpath("//h2[@class='product-name']")
     print(len(divs))

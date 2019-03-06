@@ -28,7 +28,7 @@ sleep(4)
 driver.get(url)
 
 try:
-    element=WebDriverWait(driver,10).until(EC.presence_of_element_loaded((By.CLASS,'count___11uU6 h5')))
+    element=WebDriverWait(driver,10).until(EC.presence_of_element_loaded((By.XPATH,"//div[@data-auto-id='plp-header-bar-products-count']")))
 finally:
     divs=driver.find_elements_by_xpath("//h2[@class='product-name']")
     print(len(divs))

@@ -35,7 +35,7 @@ finally:
     prices=driver.find_elements_by_class_name("gb-price")
     lines=driver.find_elements_by_class_name("accordion-toggle")
     for i in range(len(lines)):
-        print(price[i].text)
+        print(prices[i].text)
         print(lines[i])
     driver.quit()
 

@@ -32,9 +32,11 @@ try:
 finally:
     #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
     #print(len(divs))
-    divs=driver.find_elements_by_class_name("gb-price")
-    for div in divs:
-        print(div.text)
+    prices=driver.find_elements_by_class_name("gb-price")
+    lines=driver.find_elements_by_class_name("accordion-toggle")
+    for i in len(lines):
+        print(price[i].text)
+        print(lines[i])
     driver.quit()
 
 print('get url')

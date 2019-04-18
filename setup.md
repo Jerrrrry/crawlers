@@ -40,5 +40,5 @@ virtualenv /var/venv
 source /var/venv/bin/activate
 
 #Let’s get Selenium and PyVirtualDisplay. In your venv, run:
-pip install selenium==3.0.0
-pip install pyvirtualdisplay==0.2.1
+pip3 install selenium==3.0.0
+pip3 install pyvirtualdisplay==0.2.1

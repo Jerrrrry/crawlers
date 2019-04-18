@@ -1,3 +1,7 @@
+su -s /bin/bash www-data
+
+// to www-data
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install unzip

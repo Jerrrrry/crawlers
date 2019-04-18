@@ -16,7 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 url="https://www.gasbuddy.com/GasPrices/California/Riverside"
 options = ChromeOptions()
 options.add_argument("--headless")
-options.add_argument('--no-sandbox')
+#options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 #options.setBinary("/var/chromedriver/chromedriver")
 chromeDriverPath = "/var/chromedriver/chromedriver"

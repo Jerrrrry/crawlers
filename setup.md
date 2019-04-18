@@ -42,3 +42,27 @@ source /var/venv/bin/activate
 #Let’s get Selenium and PyVirtualDisplay. In your venv, run:
 pip3 install selenium==3.0.0
 pip3 install pyvirtualdisplay==0.2.1
+
+
+
+######
+
+
+Step 2 – Install Google Chrome
+Now install Latest Google chrome package on your system using the below list commands. Google chrome headless feature opens multipe doors for the automation.
+
+sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+sudo echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+sudo apt-get -y update
+sudo apt-get -y install google-chrome-stable
+Step 3 – Install ChromeDriver
+You are also required to setup ChromeDriver on your system. ChromeDriver is a standalone server which implements WebDriver’s wire protocol for Chromium. The WebDriver is an open source tool for automated testing of web apps across multiple browsers.
+###
+wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+####
+You can find the latest ChromeDriver on its official download page. Now execute below commands to configure ChromeDriver on your system.
+
+sudo mv chromedriver /usr/bin/chromedriver
+sudo chown root:root /usr/bin/chromedriver
+sudo chmod +x /usr/bin/chromedriver

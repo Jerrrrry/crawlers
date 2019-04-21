@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-url="https://www.gasbuddy.com/GasPrices/California/Riverside"
+url="https://www.99ranch.com/weekly-special"
 options = ChromeOptions()
 options.add_argument("--headless")
 options.add_argument('--no-sandbox')
@@ -28,7 +28,7 @@ sleep(4)
 driver.get(url)
 
 try:
-    element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='gb-price']")))
+    element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='stores-weekly']")))
 finally:
     #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
     #print(len(divs))

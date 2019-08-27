@@ -12,33 +12,36 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+number=10
+while number>0:
+    url="https://www.cannabiszealot.com/marijuana-data/americano"
+    options = ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    chromeDriverPath = "/var/chromedriver/chromedriver"
+    driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
+    print('initiating chrome driver')
 
-url="https://www.cannabiszealot.com/marijuana-data/americano"
-options = ChromeOptions()
-options.add_argument("--headless")
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-chromeDriverPath = "/var/chromedriver/chromedriver"
-driver = webdriver.Chrome(chromeDriverPath,chrome_options=options)
-print('initiating chrome driver')
+    print('start display')
+    sleep(4)
 
-print('start display')
-sleep(4)
+    driver.get(url)
 
-driver.get(url)
+    try:
+        element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='post-content']")))
+    finally:
+        #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
+        #print(len(divs))
+        
+        ps=driver.find_elements_by_tag_name("p")
+        for i in range(len(ps)):
+            print(ps[i].text)
+            print('fuck me')
+        driver.quit()
 
-try:
-    element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='post-content']")))
-finally:
-    #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
-    #print(len(divs))
-    ps=driver.find_elements_by_tag_name("p")
-    for i in range(len(ps)):
-        print(ps[i].text)
-        print('fuck me')
-    driver.quit()
-
-print('get url')
+    print('get url')
+    number-=1
 
 
 

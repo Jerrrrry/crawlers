@@ -27,7 +27,6 @@ def finalize_json(environment_name, component_name, host_name, ip_address, sl_pr
     'css_color': '%s' %css_color,
     'tested_url': '%s' %tested_url,
     }
-    print json_values
     json_value_comma = json_values
     write_to_json_file(json_value_comma)
 

@@ -32,7 +32,10 @@ try:
 finally:
     #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
     #print(len(divs))
-    
+    ps=driver.find_elements_by_tag_name("p")
+    for i in range(len(ps)):
+        print(ps[i].text)
+        print('fuck me')
     driver.quit()
 
 print('get url')

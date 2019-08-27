@@ -38,7 +38,6 @@ while number>0:
         for i in range(len(ps)):
             print(ps[i].text)
             print('fuck me')
-            driver.refresh()
         driver.quit()
 
 

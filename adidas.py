@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-number=10
+number=2
 while number>0:
     url="https://www.cannabiszealot.com/marijuana-data/americano"
     options = ChromeOptions()
@@ -33,7 +33,7 @@ while number>0:
     finally:
         #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
         #print(len(divs))
-        
+        sleep(60)
         ps=driver.find_elements_by_tag_name("p")
         for i in range(len(ps)):
             print(ps[i].text)

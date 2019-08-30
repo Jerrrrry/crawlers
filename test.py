@@ -4,7 +4,7 @@ import time
 from bs4 import BeautifulSoup
 
 # Set the URL you want to webscrape from
-url="https://www.99ranch.com/weekly-special"
+url="http://www.kindgreenbuds.com/marijuana-strains/mikado/"
 # Connect to the URL
 response = requests.get(url)
 

@@ -12,9 +12,9 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-number=2
+number=1
 while number>0:
-    url="https://www.cannabiszealot.com/marijuana-data/americano"
+    url="http://www.kindgreenbuds.com/marijuana-strains/mikado/"
     options = ChromeOptions()
     options.add_argument("--headless")
     options.add_argument('--no-sandbox')
@@ -29,11 +29,10 @@ while number>0:
     driver.get(url)
 
     try:
-        element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='post-content']")))
+        element=WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@id='box2']")))
     finally:
-        #divs=driver.find_elements_by_xpath("//div[@data-analytics-link='article']")
-        #print(len(divs))
-        sleep(60)
+        #ps=driver.find_elements_by_xpath("//p[@class='bold']")
+        
         ps=driver.find_elements_by_tag_name("p")
         for i in range(len(ps)):
             print(ps[i].text)

@@ -35,8 +35,7 @@ while number>0:
         
         ps=driver.find_elements_by_tag_name("p")
         for i in range(len(ps)):
-            print(ps[i].text)
-            print('fuck me')
+            print(ps[i])
         driver.quit()
 
 
